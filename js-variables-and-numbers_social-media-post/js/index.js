@@ -10,7 +10,12 @@ console.clear();
 */
 
 // --v-- write your code here --v--
-
+const aTitle = "Chat GPT";
+const aText =
+  "What is the GPT chat? ChatGPT is a natural language processing tool driven by AI technology that allows you to have human-like conversations and much more with the chatbot. The language model can answer questions and assist you with tasks, such as composing emails, essays, and code.";
+let likesNumber = 132;
+const user = "Olena Dobreva";
+const isReported = false;
 // --^-- write your code here --^--
 
 /*
@@ -18,5 +23,12 @@ console.clear();
 */
 
 // --v-- write your code here --v--
-
+console.log("aTitle: ", aTitle);
+console.log("aText: ", aText);
+console.log("likesNumber", likesNumber);
+console.log("user", user);
+console.log("isReported", isReported);
+console.log("likesNumber++", likesNumber);
+likesNumber++;
+console.log("likesNumber++", likesNumber);
 // --^-- write your code here --^--
