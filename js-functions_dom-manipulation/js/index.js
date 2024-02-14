@@ -53,5 +53,5 @@ function removeAllColors() {
 }
 
 function addColor(color) {
-  box.classList.add("color");
+  box.classList.add(color);
 }
