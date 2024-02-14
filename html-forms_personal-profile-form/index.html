@@ -10,6 +10,51 @@
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
-    <section></section>
+    <section>
+      <form>
+        <h3>
+          We want to get to know you! Please enter your personal information!
+        </h3>
+        <form>
+          <input
+            type="text"
+            id="pinfo"
+            name="pinfo"
+            value="Personal Information"
+          /><br />
+        </form>
+        <form>
+          <label for="fname">First name:</label><br />
+          <input type="text" id="fname" name="fname" /><br />
+          <label for="lname">Last name:</label><br />
+          <input type="text" id="lname" name="lname" /><br />
+          <label for="birthday">Your Birthday:</label><br />
+          <input type="date" id="birthday" name="birthday" />
+        </form>
+        <h3>
+          Can you tell us a little bit more? We just want to annoy you with
+          unwanted ads
+        </h3>
+        <form>
+          <input
+            type="text"
+            id="finfo"
+            name="finfo"
+            value="Further Information"
+          /><br />
+        </form>
+        <form>
+          <label for="favcolor">Favorite color:</label>
+          <input type="color" id="favcolor" name="favcolor" />
+          <label for="pets">What is your favourite pet?:</label>
+          <select id="pets" name="pets">
+            <option value="cat">Cat</option>
+            <option value="dog">Dog</option>
+            <option value="parrot">Parrot</option>
+            <option value="hamster">Hamster</option>
+          </select><br />
+          <input type="submit" value="Submit"
+        </form> 
+    </section>
   </body>
 </html>
