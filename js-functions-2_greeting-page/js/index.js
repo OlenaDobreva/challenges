@@ -24,11 +24,32 @@ const display = document.querySelector('[data-js="display"]');
 
 function getGreeting() {
   // Code here
+  const currentTime = newDate();
+  const currentHour = currentTime.getHours();
+
+  if (currentHour > 6 && currentHour <= 12) {
+    return "Good morning!";
+  } else if (currentHour > 12 && <= 18) {
+    return "Good afternoon!";
+  } else if (currentHour > 18 && <= 22) {
+    return "Good Evening!";
+  } else {
+    return "Good night!"
+  }
 }
 
 function getDayColor() {
   // Code here
+  const currentDay = newDate();
+  const weekDay = currentDay.getDay();
+  if (weekDay === 1) {
+    return "darkgray";
+  } else if (weekDay >=2 && <= 5) {
+    return "lightblue";
+  } else {
+    return "hotpink"
+  }
 }
 
-display.textContent = getGreeting();
-document.body.style.backgroundColor = getDayColor();
+display.textContent = getGreeting(currentTime);
+document.body.style.backgroundColor = getDayColor(currentDay);
