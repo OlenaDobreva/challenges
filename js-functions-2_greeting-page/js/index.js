@@ -22,9 +22,9 @@ Change the contents of this page depending on the current day and time.
 
 const display = document.querySelector('[data-js="display"]');
 
+const currentTime = new Date();
 function getGreeting() {
   // Code here
-  const currentTime = newDate();
   const currentHour = currentTime.getHours();
 
   if (currentHour >= 6 && currentHour <= 12) {
@@ -38,9 +38,9 @@ function getGreeting() {
   }
 }
 
+const currentDay = new Date();
 function getDayColor() {
   // Code here
-  const currentDay = newDate();
   const weekDay = currentDay.getDay();
   if (weekDay === 1) {
     return "darkgray";
