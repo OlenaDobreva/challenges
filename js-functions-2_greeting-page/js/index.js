@@ -27,14 +27,14 @@ function getGreeting() {
   const currentTime = newDate();
   const currentHour = currentTime.getHours();
 
-  if (currentHour > 6 && currentHour <= 12) {
+  if (currentHour >= 6 && currentHour <= 12) {
     return "Good morning!";
-  } else if (currentHour > 12 && <= 18) {
+  } else if (currentHour >= 13 && currentHour <= 18) {
     return "Good afternoon!";
-  } else if (currentHour > 18 && <= 22) {
+  } else if (currentHour >= 18 && currentHour <= 22) {
     return "Good Evening!";
   } else {
-    return "Good night!"
+    return "Good night!";
   }
 }
 
@@ -44,10 +44,10 @@ function getDayColor() {
   const weekDay = currentDay.getDay();
   if (weekDay === 1) {
     return "darkgray";
-  } else if (weekDay >=2 && <= 5) {
+  } else if (weekDay >= 2 && weekDay <= 5) {
     return "lightblue";
   } else {
-    return "hotpink"
+    return "hotpink";
   }
 }
 
