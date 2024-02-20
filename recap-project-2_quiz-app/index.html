@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="./styles.css" />
+    <script src="index.js" defer></script>
   </head>
   <body>
     <header>
@@ -15,18 +16,22 @@
       <section class="question-card">
         <img
           class="question-card__icon"
+          data-js="question-card__icon"
           src="./assets/bookmark.png"
           alt="bookmark"
         />
         <h2 class="question-card__title">
-          What property flips the axes of flexbox
+          Wer beschließt in Deutschland ein neues Gesetz?
         </h2>
-        <button class="question-card__button">show answer</button>
-        <p class="question-card__answer"></p>
+        <button class="question-card__button" data-js="question-card__button">
+          show answer
+        </button>
+        <p hidden class="question-card__answer" data-js="question-card__answer">
+          das Parlament
+        </p>
         <div class="question-card__tags">
-          <div class="question-card__tag">#html</div>
-          <div class="question-card__tag">#css</div>
-          <div class="question-card__tag">#flexbox</div>
+          <div class="question-card__tag">#lebenindeutchland</div>
+          <div class="question-card__tag">#gesetz</div>
         </div>
       </section>
       <section class="question-card">
@@ -35,12 +40,14 @@
           src="./assets/bookmark_filled.png"
           alt="bookmark filled"
         />
-        <h2 class="question-card__title">Why is accessibility important?</h2>
+        <h2 class="question-card__title">
+          Die Wirtschaftsform in Deutschland nennt man …
+        </h2>
         <button class="question-card__button">show answer</button>
-        <p class="question-card__answer"></p>
+        <p class="question-card__answer">soziale Marktwirtschaft.</p>
         <div class="question-card__tags">
-          <div class="question-card__tag">#html</div>
-          <div class="question-card__tag">#accessibility</div>
+          <div class="question-card__tag">#lebenindeutchland</div>
+          <div class="question-card__tag">#gesetz</div>
         </div>
       </section>
       <section class="question-card">
@@ -50,10 +57,10 @@
           alt="bookmark"
         />
         <h2 class="question-card__title">
-          What are the different position property values?
+          Welche Parteien wurden in Deutschland 2007 zur Partei „Die Linke“?
         </h2>
         <button class="question-card__button">show answer</button>
-        <p class="question-card__answer"></p>
+        <p class="question-card__answer">PDS und WASG</p>
         <div class="question-card__tags">
           <div class="question-card__tag">#html</div>
           <div class="question-card__tag">#css</div>
