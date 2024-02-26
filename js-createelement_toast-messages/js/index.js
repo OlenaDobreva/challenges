@@ -6,8 +6,16 @@ const clearButton = document.querySelector('[data-js="clear-button"]');
 
 addButton.addEventListener("click", () => {
   // Exercise: Append a new entry to the toast messages container
+  //toastContainerContainer.innerHTML +=
+  //  '<ol class="toast-container"><p>' + counter + " - " + data["input-text"];
+
+  const newEntry = document.createElement("li");
+  newEntry.textContent = "New Entry";
+  newEntry.classList.add("entry");
+  toastContainer.append(newEntry);
 });
 
 clearButton.addEventListener("click", () => {
   // Exercise: Clear the stack of toast messages
+  toastContainer.innerHTML = "";
 });
