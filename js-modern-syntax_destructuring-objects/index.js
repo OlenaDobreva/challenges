@@ -9,6 +9,8 @@ const company = {
   course: "Web Development",
   location: "Berlin",
 };
+export const { course } = company;
+console.log("course name :", course);
 
 // example: export const {value1} = myObject;
 
@@ -20,6 +22,8 @@ const company = {
 //  2.3: 'isAdmin' property into the variable 'isAdmin' (false, if no such property exists)
 
 const user = { name: "John", years: 30 };
+export const { name: name, years: age, isAdmin = false } = user;
+console.log(name, age, isAdmin);
 
 // EXERCISE 3
 // Extract the variables from the dog object and
@@ -30,6 +34,8 @@ const dog = {
   breed: "husky",
   age: 5,
 };
+export const { name: dogName, breed: dogBreed, age: dogAge } = dog;
+console.log(dogName, dogBreed, dogAge);
 
 // EXERCISE 4
 // Extract the 'lastName' property from the person object as "personLastName".
@@ -40,3 +46,5 @@ const person = {
   age: 24,
   firstName: "Alex",
 };
+export const { lastName: personLastName, ...moreInformation } = person;
+console.log(personLastName, moreInformation);
