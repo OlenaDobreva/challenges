@@ -2,7 +2,7 @@ import "./App.css";
 import { useState } from "react";
 
 export default function App() {
-  const [showMessage, setShowMessage] = useState(false);
+  const [showMessage, setShowMessage] = useState();
   if (!showMessage) {
     return (
       <div className="container">
