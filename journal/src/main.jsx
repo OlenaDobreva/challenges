@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 import "./index.css";
+import { uid } from "uid";
+import EntryForm from "./EntryForm.jsx";
+import EntriesSection from "./EnrtiesSection.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -9,64 +12,51 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   </React.StrictMode>
 );
 
-export default function Main() {
-  const [entries, setEntries] = useState([]);
-  const [newEntry, setNewEntry] = useState("");
-  const [activeTab, setActiveTab] = useState("all"); // initial active tab
+const initialEntries = [
+  {
+    id: 1000,
+    date: "Feb 5, 2025",
+    motto: "We are in a state of chaos",
+    notes:
+      "Today I learned about React State. It was fun! I can't wait to learn more.",
+    isFavorite: false,
+  },
+  {
+    id: 999,
+    date: "Feb 4, 2025",
+    motto: "Props, Props, Props",
+    notes:
+      "Today I learned about React Props. Mad props to everyone who understands this!",
+    isFavorite: false,
+  },
+  {
+    id: 998,
+    date: "Feb 3, 2025",
+    motto: "How to nest components online fast",
+    notes:
+      "Today I learned about React Components and how to nest them like a pro. Application design is so much fun!",
+    isFavorite: false,
+  },
+  {
+    id: 997,
+    date: "Feb 2, 2025",
+    motto: "I'm a React Developer",
+    notes: "My React-ion when I learned about React: 😍",
+    isFavorite: false,
+  },
+];
 
-  const handleInputChange = (event) => {
-    setNewEntry(event.target.value);
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    setEntries([...entries, newEntry]);
-    setNewEntry("");
-  };
-
-  const handleTabChange = (tab) => {
-    setActiveTab(tab);
-  };
-
-  // filtering all entries by active tab
-  const filteredEntries = activeTab === "all" ? entries : [];
+export default function Main(handleAddEntry) {
+  const [entries, setEntries] = useState(initialEntries);
+  const id = uid();
+  const date = new Date().toLocaleDateString("en-us", { dateStyle: "medium" });
+  setEntries([{ id, date, ...newEntry, isFavorite: false }, ...entries]);
 
   return (
-    <div>
-      <h2>Add entries</h2>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          value={newEntry}
-          onChange={handleInputChange}
-          placeholder="You can put your enry here"
-        />
-        <button type="submit">add new entry</button>
-      </form>
-
-      <h2>Entries</h2>
-      <div>
-        <div className="tab-bar">
-          <button
-            className={activeTab === "all" ? "active" : ""}
-            onClick={() => handleTabChange("all")}
-          >
-            All
-          </button>
-          <button
-            className={activeTab === "favorites" ? "active" : ""}
-            onClick={() => handleTabChange("favorites")}
-          >
-            Favourite
-          </button>
-          {/* Here new tabs can be added */}
-        </div>
-        <ul>
-          {filteredEntries.map((entry, index) => (
-            <li key={index}>{entry}</li>
-          ))}
-        </ul>
-      </div>
+    <div className="main">
+      <Header />
+      <EntryForm onAddEntry={handleAddEntry} />
+      <EntriesSection entries={entries} />
     </div>
   );
 }
