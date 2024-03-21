@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import { lora } from "styled-components";
 
 export default createGlobalStyle`
   *,

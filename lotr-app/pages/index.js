@@ -5,7 +5,7 @@ import { useRouter } from "next/router.js";
 
 export default function HomePage() {
   const router = useRouter();
-  const { slug } = rouiter.query;
+  const { slug } = router.query;
 
   function getRandomElement(array) {
     return array[Math.floor(Math.random() * array.length)];
