@@ -13,31 +13,29 @@ export default function Form() {
   });
 
   function handleNameChange(event) {
-    setMountain({ ...mountain, name: event.target.value });
-  }
-  //   //  setMountain((draft) => {
-  //   //     draft.name = event.target.value;
-  //   //   });
-  //   }
-
-  function handleAltitudeChange(event) {
-    setMountain({
-      ...mountain,
-      values: { ...mountain.values, altitude: event.target.value },
+    // setMountain({ ...mountain, name: event.target.value });
+    setMountain((draft) => {
+      draft.name = event.target.value;
     });
   }
 
-  //     updateMountain((draft) => {
-  //       draft.values.altitude = event.target.value;
-
-  //     })
-  //     });
-  //   }
+  function handleAltitudeChange(event) {
+    // setMountain({
+    //   ...mountain,
+    //   values: { ...mountain.values, altitude: event.target.value },
+    // });
+    setMountain((draft) => {
+      draft.values.altitude = event.target.value;
+    });
+  }
 
   function handleMountainRangeChange(event) {
-    setMountain({
-      ...mountain,
-      values: { ...mountain.values, mountainRange: event.target.value },
+    // setMountain({
+    //   ...mountain,
+    //   values: { ...mountain.values, mountainRange: event.target.value },
+    // });
+    setMountain((draft) => {
+      draft.values.mountainRange = event.target.value;
     });
   }
 
