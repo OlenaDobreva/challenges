@@ -1,5 +1,6 @@
 import { Fragment, useState } from "react";
 import Winner from "../Winner";
+import { useImmer } from "use-immer";
 import {
   CarButton,
   AllCarRoutes,
@@ -12,7 +13,7 @@ import { initialCars, getRandomDistance } from "../../utils/utils";
 const finishLine = 200;
 
 export default function CarRace() {
-  const [cars, setCars] = useState(initialCars);
+  const [cars, setCars] = useImmer(initialCars);
 
   function moveCar(clickedCar) {
     const coveredDistance = getRandomDistance();
