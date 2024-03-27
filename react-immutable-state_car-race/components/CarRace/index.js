@@ -17,18 +17,23 @@ export default function CarRace() {
 
   function moveCar(clickedCar) {
     const coveredDistance = getRandomDistance();
-    const updatedCarsState = cars.map((car) =>
-      car.emoji !== clickedCar.emoji
-        ? car
-        : {
-            ...car,
-            position: {
-              x: car.position.x + coveredDistance,
-              lastDistance: coveredDistance,
-            },
-          }
-    );
-    setCars(updatedCarsState);
+    // const updatedCarsState = cars.map((car) =>
+    //   car.emoji !== clickedCar.emoji
+    //     ? car
+    //     : {
+    //         ...car,
+    //         position: {
+    //           x: car.position.x + coveredDistance,
+    //           lastDistance: coveredDistance,
+    //         },
+    //       }
+    // );
+    // setCars(updatedCarsState);
+    setCars((draft) => {
+      const car = draft.find((car) => car.emoji === clickedCar.emoji);
+      car.position.x = car.position.x + coveredDistance;
+      car.position.lastDistance = coveredDistance;
+    });
   }
 
   const winner = cars.find((car) => car.position.x >= finishLine);
