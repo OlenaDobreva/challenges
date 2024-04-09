@@ -5,6 +5,11 @@ export default async function handler(request, response) {
   await dbConnect();
   const { id } = request.query;
 
+  if (request.method === "PUT") {
+    await Product.findByIdAndUpdate(id, updatedProduct);
+    response.status(200).json({ status: `Product ${id} successfully updated` });
+  }
+
   if (request.method === "GET") {
     const product = await Product.findById(id).populate("reviews");
 
@@ -13,5 +18,10 @@ export default async function handler(request, response) {
     }
 
     response.status(200).json(product);
+  }
+
+  if (request.method === "DELETE") {
+    await Product.findByIdAndDelete(id);
+    response.status(200).json({ status: `Product ${id} successfully deleted` });
   }
 }
